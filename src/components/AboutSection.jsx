@@ -1,13 +1,17 @@
 import SocialIcons from "./SocialIcons"
 import { SiHtml5, SiCss3, SiJavascript, SiBootstrap, SiJquery, SiDjango, SiReact, SiTailwindcss } from "react-icons/si";
 
+const getProfilePicture = (url) => {
+    return new URL(`../assets/${url}`, import.meta.url).href
+}
+
 const AboutSection = () => {
     return (
         <section className="mb-10">
             <div className="flex flex-wrap justify-between items-center">
             <div className="tooltip">
                 <img 
-                src="/src/assets/profile-photo.jpg" 
+                src={getProfilePicture("profile-photo.jpg")} 
                 alt="My profile photo"
                 className="img-profile transition-all" />
                 <span 
