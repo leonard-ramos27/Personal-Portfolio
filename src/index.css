@@ -20,6 +20,7 @@
   --linkedin-color: #007BB5;
   --github-color: #14232C;
   --frontendmentor-color: #3F54A3;
+  --gmail-color: #C71610;
   --html-color: #E34C26;
   --css-color: #264DE4;
   --js-color: #F0DB4F;
@@ -80,6 +81,10 @@ body{
 
 .social-icon.frontendmentor:hover{
   color: var(--frontendmentor-color);
+}
+
+.social-icon.gmail:hover{
+  color: var(--gmail-color);
 }
 
 .tooltip{
@@ -174,19 +179,23 @@ body{
 }
 
 .grid-row-xs{
-  grid-row-end: span 9;
+  grid-row-end: span 12;
 }
 
 .grid-row-sm{
-  grid-row-end: span 10;
+  grid-row-end: span 13;
 }
 
 .grid-row-md{
-  grid-row-end: span 11;
+  grid-row-end: span 14;
 }
 
 .grid-row-lg{
-  grid-row-end: span 13;
+  grid-row-end: span 15;
+}
+
+.grid-row-xl{
+  grid-row-end: span 16;
 }
 
 .tools-icon svg{
@@ -222,6 +231,7 @@ body{
 @media (min-width: 768px) {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 300px));
+    justify-content: space-between;
   }
 }
 

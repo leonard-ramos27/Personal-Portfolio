@@ -18,22 +18,33 @@ const toolsIcon = {
 
 const ProjectCard = ({project}) => {
     return (
-        <div className={`project-wrapper text-center ${project.gridRow}`}>
+        <div className={`project-wrapper text-center md:text-left ${project.gridRow}`}>
             <img 
               src={getProjectImage(project.photo)} 
               alt="Screenshot for Multi-step Form website"
               className="transition-transform hover:scale-105 rounded shadow-md" />
-            <h3 className="mt-4 text-lg font-semibold">{project.title}</h3>
-            <p className="text-sm">Created using {project.tools.map((tool, index) => {  
-                return (
+            <h3 className="mt-4 mb-1 text-lg font-semibold">{project.title}</h3>
+            {project.desc && 
+              <p className="text-sm mb-2">
+                {project.frontendmentor && 
+                  <span className="mr-1">Based on a challenge from <a className="btn-hover-underline" href={project.challengelink} target="_blank">FrontendMentor</a>.</span>
+                }
+                {project.desc}
+              </p>
+            }
+            <p className="text-sm">
+              <span className="block">Built using:</span>
+              <span className="-ml-1">
+                {project.tools.map((tool, index) => (  
                   <span key={index}>
                     <span className="whitespace-nowrap tools-icon">{toolsIcon[tool]}{tool}</span>
                     {index+2 < project.tools.length && ' , '}
                     {index+2 == project.tools.length && ' and '}
                   </span>
-                )
-            })}</p>
-            <div className="flex flex-wrap gap-4 justify-center mt-3">
+                ))}
+              </span>
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center md:justify-start mt-3">
               <a 
                 href={project.site}
                 target="_blank"
