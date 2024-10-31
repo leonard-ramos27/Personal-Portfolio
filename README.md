@@ -8,3 +8,6 @@ Tools used:
 - Tailwind CSS
 - Vite
 - Framer Motion
+- Netlify
+
+[Link to Portfolio Site](https://leonard-ramos-dev.netlify.app/)
