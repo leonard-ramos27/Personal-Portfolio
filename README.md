@@ -1,3 +1,10 @@
-# My Personal Portfolio Built using React and Tailwind
+# My Personal Portfolio Website
 
-This is the code for my personal portfolio website showcasing the projects I've created. Built using React and Tailwind CSS.
+This is the code for my personal portfolio website showcasing some of the projects I've created. 
+
+Tools used:
+
+- ReactJS
+- Tailwind CSS
+- Vite
+- Framer Motion
