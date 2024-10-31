@@ -69,9 +69,7 @@ function App() {
   return (
     <main className="max-w-[710px] mx-6 md:mx-auto my-12 md:mt-16">
       <AboutSection />
-      <hr className="border-slate-300"/>
       <ProjectsSection projects={projects}/>
-      <hr className="border-slate-300"/>
       <ContactSection />
     </main>
   )
