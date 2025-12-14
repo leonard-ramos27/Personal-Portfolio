@@ -3,7 +3,7 @@ import SlideIn from "./SlideIn";
 
 const ContactSection = () => {
     return (
-        <section>
+        <section className="mb-[60px]">
             <SlideIn 
                 direction="left"
                 delay={0.3}
