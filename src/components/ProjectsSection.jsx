@@ -3,7 +3,7 @@ import SlideIn from "./SlideIn";
 
 const ProjectsSection = ({projects}) => {
     return (
-        <section>
+        <section id="projects-section">
             <SlideIn
                 direction="left"
                 delay={0.2}
