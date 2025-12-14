@@ -67,7 +67,7 @@ const projects = [
 
 function App() {
   return (
-    <main className="max-w-[710px] mx-6 md:mx-auto my-12 md:mt-16">
+    <main className="max-w-[800px] mx-6 md:mx-auto">
       <AboutSection />
       <ProjectsSection projects={projects}/>
       <ContactSection />

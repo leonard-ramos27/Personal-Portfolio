@@ -1,35 +1,47 @@
-import SocialIcons from "./SocialIcons"
-import { SiHtml5, SiCss3, SiJavascript, SiBootstrap, SiJquery, SiDjango, SiReact, SiTailwindcss } from "react-icons/si";
+import { SiBootstrap, SiReact, SiTailwindcss, SiSvelte, SiTypescript, SiNextdotjs, SiDjango, SiRedux, SiSwr, SiJquery, SiShadcnui, SiFigma, SiVite } from "react-icons/si";
+import { IoArrowDownCircleOutline } from "react-icons/io5";
 import SlideIn from "./SlideIn";
-
-const getProfilePicture = (url) => {
-    return new URL(`../assets/${url}`, import.meta.url).href
-}
+import Bounce from "./Bounce"
+import Header from "./Header";
 
 const AboutSection = () => {
     return (
-        <section>
-            <SlideIn direction="left">
-                <div className="flex flex-wrap justify-between items-center">
-                <div className="tooltip">
-                    <img 
-                    src={getProfilePicture("profile-photo.jpg")} 
-                    alt="My profile photo"
-                    className="img-profile transition-all" />
-                    <span 
-                    className="tooltip-text py-1 px-2 text-xs rounded-full transition-opacity" 
-                    role="tooltip">
-                        That's me!
-                    </span>
-                </div>
-                <div className="h-fit">
-                    <SocialIcons />
-                </div>
-                </div>
-                <div className="mt-12 mb-16">
-                    <p className="mb-3">Kumusta! 👋🏼</p>
-                    <h1 className="mb-3">I'm <strong>Leonard Ramos</strong> - a <strong>Frontend Web Developer</strong> from the Philippines.</h1>
-                    <p className="mb-3">I specialize in converting web designs into responsive, fully working websites or web apps. With over a year of experience with using libraries like <span className="tool-icon bootstrap"><SiBootstrap /> Bootstrap</span>, <span className="tool-icon jquery"><SiJquery /> JQuery</span> and web frameworks like <span className="tool-icon django"><SiDjango /> Django</span> to build dynamic user interfaces. I’m also committed to continuous learning and currently expanding my skillsets with frameworks like <span className="tool-icon react"><SiReact /> React</span> and <span className="tool-icon tailwind"><SiTailwindcss /> Tailwind</span> to build an even more interactive and seamless digital experience.</p>
+        <section className="min-h-screen pt-16 pb-9 mb-4 flex flex-col justify-center items-center gap-5">
+            <SlideIn direction="left" styles="flex-grow flex flex-col justify-between items-stretch gap-16">
+                <Header />
+                <div className="flex-grow flex flex-col justify-between items-center">
+                    <div>
+                        <h1 className="mb-3 text-black">
+                            Kumusta! I'm Leonard from the Philippines 👋🏼
+                        </h1>
+                        <p className="mb-3">
+                            I specialize in building responsive and user-friendly web applications that deliver smooth and engaging experiences. I enjoy transforming ideas and designs into clean, functional user interfaces.
+                        </p>
+                        <p className="mb-2">Tools and technologies I work with:</p>
+                        <div className="flex flex-row flex-wrap justify-start items-start gap-x-4 gap-y-2 mb-6">
+                            <span className="tool-icon-hover react"><SiReact /> React</span>
+                            <span className="tool-icon-hover svelte"><SiSvelte /> Svelte</span>
+                            <span className="tool-icon-hover typescript"><SiTypescript /> Typescript</span>
+                            <span className="tool-icon-hover tailwind"><SiTailwindcss /> Tailwind</span>
+                            <span className="tool-icon-hover bootstrap"><SiBootstrap /> Bootstrap</span>
+                            <span className="tool-icon-hover nextjs"><SiNextdotjs /> Next.js</span>
+                            <span className="tool-icon-hover django"><SiDjango /> Django</span>
+                            <span className="tool-icon-hover redux"><SiRedux /> Redux</span>
+                            <span className="tool-icon-hover swr"><SiSwr /> SWR</span>
+                            <span className="tool-icon-hover jquery"><SiJquery /> jQuery</span>
+                            <span className="tool-icon-hover shadcn"><SiShadcnui /> Shadcn-ui</span>
+                            <span className="tool-icon-hover vite"><SiVite /> Vite</span>
+                            <span className="tool-icon-hover figma"><SiFigma /> Figma</span>
+                        </div>
+                    </div>
+                    <div>
+                        <a href="#projects-section" className="flex flex-col items-center justify-center">
+                            <Bounce>
+                                <IoArrowDownCircleOutline className="text-[2rem]"/>
+                            </Bounce>
+                            <div>Scroll down to view some of my work</div>
+                        </a>
+                    </div>
                 </div>
             </SlideIn>
         </section>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -29,6 +30,14 @@
   --django-color: #092E20;
   --react-color: #04D8F9;
   --tailwind-color: #0F9EE1;
+  --svelte-color: #FF4E00;
+  --typescript-color: #3178C6;
+  --nextjs-color: #000000;
+  --redux-color: #764abc;
+  --swr-color: #323232;
+  --shadcn-color: #000000;
+  --vite-color: #9170c7;
+  --figma-color: #a800f6;
 }
 
 *,
@@ -39,21 +48,32 @@
   padding: 0;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
 svg{
   display: inline;
 }
 
 body{
-  font-family: "Assistant", sans-serif;
-  font-size: 18px;
-  line-height: 1.9rem;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 1rem;
+  line-height: 1.65rem;
   background-color: var(--background-color);
   color: var(--text-color);
+  /* letter-spacing: 0.015rem; */
 }
 
 #root{
   max-width: 100vw;
-  overflow-x: hidden;
+  overflow: hidden;
+}
+
+h1{
+  font-size: 1.25rem;
+  line-height: 2rem;
+  font-weight: 600;
 }
 
 .img-profile{
@@ -68,7 +88,7 @@ body{
 }
 
 .social-icon{
-  font-size: 24px;
+  font-size: 20px;
 }
 
 .social-icon.linkedin:hover{
@@ -117,52 +137,118 @@ body{
   margin-right: 4px;
 }
 
-.tool-icon{
-  padding: 3px 4px;
-  margin-inline: 3px;
+.tool-icon,
+.tool-icon-hover:hover{
   background-color: #fafafa;
   border: 1px solid #d9d9d9;
   border-radius: .25rem;
-  font-size: .95rem;
   color: #000;
   font-weight: 500;
   white-space: nowrap;
 }
 
-.tool-icon svg{
+.tool-icon{
+  padding: 3px 4px;
+  margin-inline: 3px;
+  font-size: .95rem;
+}
+
+.tool-icon-hover{
+  padding: 0px 6px;
+  margin-inline: 0px;
+  border: 1px solid transparent;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.tool-icon-hover:hover{
+  /* scale: 1.08; */
+  transform: translateY(-3px);
+}
+
+.tool-icon svg,
+.tool-icon-hover svg{
   margin-bottom: 2px;
 }
 
-.tool-icon.html svg{
+.tool-icon.html svg,
+.tool-icon-hover:hover.html svg{
   color: var(--html-color);
 }
 
-.tool-icon.css svg{
+.tool-icon.css svg,
+.tool-icon-hover:hover.css svg{
   color: var(--css-color);
 }
 
-.tool-icon.javascript svg{
+.tool-icon.javascript svg,
+.tool-icon-hover:hover.javascript svg{
   color: var(--js-color);
 }
 
-.tool-icon.bootstrap svg{
+.tool-icon.bootstrap svg,
+.tool-icon-hover:hover.bootstrap svg{
   color: var(--bootstrap-color);
 }
 
-.tool-icon.jquery svg{
+.tool-icon.jquery svg,
+.tool-icon-hover:hover.jquery svg{
   color: var(--jquery-color);
 }
 
-.tool-icon.django svg{
+.tool-icon.django svg,
+.tool-icon-hover:hover.django svg{
   color: var(--django-color);
 }
 
-.tool-icon.react svg{
+.tool-icon.react svg,
+.tool-icon-hover:hover.react svg{
   color: var(--react-color);
 }
 
-.tool-icon.tailwind svg{
+.tool-icon.tailwind svg,
+.tool-icon-hover:hover.tailwind svg{
   color: var(--tailwind-color);
+}
+
+.tool-icon.svelte svg,
+.tool-icon-hover:hover.svelte svg{
+  color: var(--svelte-color);
+}
+
+.tool-icon.typescript svg,
+.tool-icon-hover:hover.typescript svg{
+  color: var(--typescript-color);
+}
+
+.tool-icon.nextjs svg,
+.tool-icon-hover:hover.nextjs svg{
+  color: var(--nextjs-color);
+}
+
+.tool-icon.redux svg,
+.tool-icon-hover:hover.redux svg{
+  color: var(--redux-color);
+}
+
+.tool-icon.swr svg,
+.tool-icon-hover:hover.swr svg{
+  color: var(--swr-color);
+}
+
+.tool-icon.shadcn svg,
+.tool-icon-hover:hover.shadcn svg{
+  color: var(--shadcn-color);
+}
+
+.tool-icon.vite svg,
+.tool-icon-hover:hover.vite svg{
+  color: var(--vite-color);
+}
+
+.tool-icon.figma svg,
+.tool-icon-hover:hover.figma svg{
+  color: var(--figma-color);
 }
 
 .projects-grid{
