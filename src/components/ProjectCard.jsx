@@ -1,4 +1,4 @@
-import { SiHtml5, SiCss3, SiJavascript, SiBootstrap, SiJquery, SiTypescript, SiReact, SiTailwindcss } from "react-icons/si";
+import { SiHtml5, SiCss3, SiJavascript, SiBootstrap, SiJquery, SiTypescript, SiReact, SiTailwindcss, SiNextdotjs, SiShadcnui } from "react-icons/si";
 import { FaArrowUpRightFromSquare, FaCode } from "react-icons/fa6";
 import SlideIn from "./SlideIn";
 
@@ -15,6 +15,8 @@ const toolsIcon = {
   Javascript: <span className="text-javascript mx-1"><SiJavascript /></span>,
   CSS: <span className="text-css mx-1"><SiCss3 /></span>,
   HTML: <span className="text-html mx-1"><SiHtml5 /></span>,
+  Nextjs: <span className="text-nextjs mx-1"><SiNextdotjs /></span>,
+  Shadcn: <span className="text-shadcn mx-1"><SiShadcnui /></span>,
 }
 
 const ProjectCard = ({project}) => {
@@ -22,49 +24,53 @@ const ProjectCard = ({project}) => {
     <SlideIn
       direction="up"
       delay={0.2}
-      styles={`project-wrapper text-center md:text-left ${project.gridRow}`}
-      margin="0px 0px -200px 0px"
     >
-      <img 
-        src={getProjectImage(project.photo)} 
-        alt="Screenshot for Multi-step Form website"
-        className="transition-transform hover:scale-105 rounded shadow-md" />
-      <h3 className="mt-4 mb-1 text-lg font-semibold">{project.title}</h3>
-      {project.desc && 
-        <p className="text-sm mb-2">
-          {project.frontendmentor && 
-            <span className="mr-1">Based on a challenge from <a className="btn-hover-underline" href={project.challengelink} target="_blank">FrontendMentor</a>.</span>
+      <div className="md:flex md:flex-row md:justify-between md:items-center md:gap-8">
+        <div className="flex-1">
+          <img 
+          src={getProjectImage(project.photo)} 
+          alt="Screenshot for Multi-step Form website"
+          className="transition-transform hover:scale-105 rounded shadow-md w-full" />
+        </div>
+        <div className="flex-1">
+          <h3 className="mt-4 mb-1 text-lg font-semibold">{project.title}</h3>
+          <div className="flex flex-wrap gap-4 justify-start mb-3">
+            <a 
+              href={project.site}
+              target="_blank"
+              className="text-gray hover:text-slate-700 transition-colors text-sm font-medium flex items-center btn-hover-underline btn-visit-site">
+              <FaArrowUpRightFromSquare />
+              <span className="ml-2">Visit Site</span>
+            </a>
+            <a 
+              href={project.code}
+              target="_blank"
+              className="text-gray hover:text-slate-700 transition-colors text-sm font-medium flex items-center btn-hover-underline">
+              <FaCode className="mb-1"/>
+              <span className="ml-1">View Code</span>
+            </a>
+          </div>
+          {project.desc && 
+            <p className="text-sm mb-3">
+              {project.desc}
+            </p>
           }
-          {project.desc}
-        </p>
-      }
-      <p className="text-sm">
-        <span className="block">Built using:</span>
-        <span className="-ml-1">
-          {project.tools.map((tool, index) => (  
-            <span key={index}>
-              <span className="whitespace-nowrap tools-icon">{toolsIcon[tool]}{tool}</span>
-              {index+2 < project.tools.length && ' , '}
-              {index+2 == project.tools.length && ' and '}
+          <p className="text-sm">
+            <span className="block mb-1">Built using:</span>
+            <span className="-ml-1 flex flex-row flex-wrap justify-start items-start gap-1">
+              {project.tools.map((tool, index) => (  
+                <span key={index}>
+                  <span className="whitespace-nowrap tools-icon">
+                    {toolsIcon[tool]}
+                    {tool}
+                    {index+2 < project.tools.length && ','}
+                  </span>
+                  {index+2 == project.tools.length && <span className="px-1">and</span>}
+                </span>
+              ))}
             </span>
-          ))}
-        </span>
-      </p>
-      <div className="flex flex-wrap gap-4 justify-center md:justify-start mt-3">
-        <a 
-          href={project.site}
-          target="_blank"
-          className="text-gray hover:text-slate-700 transition-colors text-sm font-medium flex items-center btn-hover-underline btn-visit-site">
-          <FaArrowUpRightFromSquare />
-          <span className="ml-2">Visit Site</span>
-        </a>
-        <a 
-          href={project.code}
-          target="_blank"
-          className="text-gray hover:text-slate-700 transition-colors text-sm font-medium flex items-center btn-hover-underline">
-          <FaCode className="mb-1"/>
-          <span className="ml-1">View Code</span>
-        </a>
+          </p>
+        </div>
       </div>
     </SlideIn>
   )
